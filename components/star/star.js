@@ -26,10 +26,11 @@
             }
         }
 
-        set size(size) {
-            if (this.size != size) {
-                this.shadowRoot.querySelector('svg').setAttribute('height', size);
-                this.shadowRoot.querySelector('svg').setAttribute('width', size);
+        set size(val) {
+            if (this.size != val) {
+                this.shadowRoot.querySelector('svg').setAttribute('height', val);
+                this.shadowRoot.querySelector('svg').setAttribute('width', val);
+                this.style['min-height'] = val;
             }
         }
 
@@ -37,9 +38,9 @@
             return this[size];
         }
 
-        set enabled(enabled) {
-            if (this.enabled != enabled) {
-                let color = enabled ? 'url(#enabled)' : 'url(#disabled)';
+        set enabled(val) {
+            if (this.enabled != val) {
+                let color = val ? 'url(#enabled)' : 'url(#disabled)';
                 this.shadowRoot.querySelector('polygon').style['fill'] = color;
             }
         }
@@ -51,8 +52,9 @@
         set opacity(val) {
             if (this.opacity != val) {
                 this[opacity] = val;
-                let stops = this.shadowRoot.querySelectorAll('stop');
-                Array.prototype.forEach.call(stops, stop => stop.setAttribute('stop-opacity', val));
+                let polygon = this.shadowRoot.querySelector('polygon');
+                polygon.setAttribute('fill-opacity', val);
+                this.setAttribute('opacity', val);
             }
         }
 

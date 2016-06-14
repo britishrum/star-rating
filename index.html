@@ -1,9 +1,75 @@
+<!DOCTYPE html>
 <html>
+
 <head>
+    <meta charset="utf-8">
     <script src="js/lib/webcomponents.min.js"></script>
     <link rel="import" href="components/rating/rating.html">
+    <link rel="stylesheet" href="css/style.css" media="all">
+    <title>Rating control</title>
 </head>
+
 <body>
-    <x-rating value="4" maxvalue="6"> </x-rating>
+    <main>
+        <h2>Rating control</h2>
+        <section>
+            <p>
+                Rating control allows users select the number of stars that represents their rating.
+            </p>
+            <p>
+                The control is based on webcomponents technology, so until it is supported by all major browsers it is highly recommended that you use <a href="https://github.com/webcomponents/webcomponentsjs">Web Components polyfill</a>. You can either
+                download it manually or build your control from the <a href="https://github.com/sashafaz/star-rating">source code</a>. If you build the control from the sources, remember to install npm and bower dependencies.
+            </p>
+        </section>
+
+        <section>
+            Frst, <a href="components.zip">download</a> <span class="code">star</span> and <span class="code">rating</span> components and put it in your project directory, wherever you want them to be. Then, import <span class="code">x-rating</span>            component using HTML imports:
+            <div class="code-block"><span class="code">&lt;link rel="import" href="rating/rating.html"&gt;</span></div>
+            Then, put <span class="code">x-rating</span> element on the page like this:
+            <div class="code-block"><span class="code">&lt;x-rating&gt;&lt;/x-rating&gt;</span></div>
+            Result:
+            <x-rating maxvalue="5"></x-rating>
+        </section>
+
+        <section>
+            You can manually set value and amount of stars by setting <span class="code">value</span> and <span class="code">maxvalue</span> attributes:
+            <div class="code-block"><span class="code">&lt;x-rating value="7" maxvalue="9"&gt;&lt;/x-rating&gt;</span></div>
+            Result:
+            <x-rating starsize="30" value="7" maxvalue="9"></x-rating>
+        </section>
+
+        <section>
+            To change size of the control, use <span class="code">starsize</span> attribute:
+            <div class="code-block"><span class="code">&lt;x-rating starsize="20px"&gt;&lt;/x-rating&gt;</span></div>
+            Result:
+            <x-rating starsize="20px"></x-rating>
+            <div class="code-block"><span class="code">&lt;x-rating starsize="80px"&gt;&lt;/x-rating&gt;</span></div>
+            Result:
+            <x-rating starsize="80px"></x-rating>
+
+        </section>
+
+        <section>
+            To change opacity of the control, use <span class="code">opacity</span> attribute:
+            <div class="code-block"><span class="code">&lt;x-rating opacity="0.2"&gt;&lt;/x-rating&gt;</span></div>
+            Result:
+            <x-rating starsize="30" opacity="0.2"></x-rating>
+        </section>
+
+        <section>
+            If you want to prevent user from changing value, you can use <span class="code">disabled</span> attribute:
+            <div class="code-block"><span class="code">&lt;x-rating value="4" disabled="true"&gt;&lt;/x-rating&gt;</span></div>
+            Result:
+            <x-rating value="4" disabled="true"></x-rating>
+        </section>
+
+        <section>
+            Components can be downloaded as a <a href="components.zip">zip archive</a>. Source code available at <a href="https://github.com/sashafaz/star-rating">GitHub</a>
+        </section>
+    </main>
+    <footer>
+        sashafaz, 2016
+    </footer>
 </body>
+
 </html>
