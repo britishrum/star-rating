@@ -41,12 +41,12 @@
             }
         }
 
-        set starsize(size) {
-            if (this.starsize != size) {
-                this[starsize] = size;
+        set starsize(val) {
+            if (this.starsize != val) {
+                this[starsize] = val;
                 let stars = this.shadowRoot.querySelectorAll('x-star');
-                Array.prototype.forEach.call(stars, star => star.size = size);
-                this.setAttribute('starsize', val);
+                Array.prototype.forEach.call(stars, star => star.size = val);
+                this.style['min-height'] = val;
             }
         }
 
@@ -59,7 +59,6 @@
                 this[value] = val;
                 let stars = this.shadowRoot.querySelectorAll('x-star');
                 enableStars(stars, val);
-                this.setAttribute('value', val);
             }
         }
 

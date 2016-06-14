@@ -12,7 +12,7 @@ module.exports = function(grunt) {
             files: [{
                 expand: true,
                 cwd: 'src',
-                src: ['html/**/*.html', 'components/**/*.html'],
+                src: ['**/*.html', 'components/**/*.html', 'css/**/*.css'],
                 dest: 'build'
             }]
         }

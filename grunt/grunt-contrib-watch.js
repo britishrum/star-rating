@@ -2,7 +2,6 @@ module.exports = function(grunt) {
     grunt.config('watch', {
         scripts: {
             files: [
-                'src/js/**/*.js',
                 'src/components/**/*.js'
             ],
             tasks: [
@@ -11,8 +10,9 @@ module.exports = function(grunt) {
         },
         html: {
             files: [
-                'src/html/**/*.html',
-                'src/components/**/*.html'
+                'src/**/*.html',
+                'src/components/**/*.html',
+                'src/css/**/*.css'
             ],
             tasks: [
                 'copy:html'

@@ -1,7 +1,6 @@
 module.exports = function(grunt) {
   grunt.config('jshint', {
       all: [
-        './src/js/**/*.js',
         '.src/components/**/*.js',
         './*.js',
         './*.json',
